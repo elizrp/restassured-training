@@ -4,6 +4,6 @@ This is a project which uses RestAssured framework for working with Rest API (pu
 
 ### tasks
 By using the open api from the Usseful links:
-Create Java class with one main method and execute simple RestAssured requests for get and post.
-Create different requests that includes headers and body.
-Read the response and print it to the console.
+- Create Java class with one main method and execute simple RestAssured requests for get and post.
+- Create different requests that includes headers and body.
+- Read the response and print it to the console.
