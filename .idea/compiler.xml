@@ -10,5 +10,8 @@
         <module name="RestAssuredTraining" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="RestAssuredTraining" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
