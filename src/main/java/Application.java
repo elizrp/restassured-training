@@ -11,12 +11,12 @@ public class Application {
     final static String postUrl = "https://dummy.restapiexample.com/api/v1/create";
 
     public static void main(String[] args) {
-        getResponseBodyWithQueryParameters();
-        getResponseBodyWithoutQueryParameters();
-        verifyResponseStatusCodeValid();
-        verifyResponseStatusCodeInvalid();
-        getResponseBodyWithRequestHeader();
-        createPostRequest();
+//        getResponseBodyWithQueryParameters();
+//        getResponseBodyWithoutQueryParameters();
+//        verifyResponseStatusCodeValid();
+//        verifyResponseStatusCodeInvalid();
+//        getResponseBodyWithRequestHeader();
+//        createPostRequest();
     }
 
 
@@ -85,5 +85,20 @@ public class Application {
 
         // Print the value of the name field from the response
         System.out.println(response.getBody().path("data.name").toString());
+    }
+
+    /**
+     * Backup method for creating a POST request to another url in case the other one stops working.
+     */
+    public static void createPostRequest2() {
+
+        // Create a string to use as request body
+        String json = "{\"forward_url\":\"https://myservice.example.com/events-collector\",\"proxy_response\":false,\"insecure_tls\":false,\"expand_path\":true,\"capacity\": 250}";
+
+        given().contentType(ContentType.JSON).body(json)
+                .when()
+                .post("https://rbaskets.in/api/baskets/hello")
+                .then()
+                .statusCode(HttpStatus.SC_CREATED);
     }
 }
